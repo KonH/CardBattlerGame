@@ -20,6 +20,26 @@ An invalid **DI configuration throwing is intentional**, not a finding.
 - If the same root cause appears in several places, report it once and list the other sites.
 - Never propose adding an interface unless a cross-scope dependency needs inverting or a second
   implementation exists.
+- Never propose *removing* an interface that a second scope consumes. A `Shared` contract used by
+  more than one scope is a cross-scope dependency and stays, single implementation or not —
+  "only one implementation" is not on its own a finding.
+- When a diff adds or moves an asmdef, check for a `csc.rsp` containing `-nullable:enable` beside it.
+  Every assembly must have one, with no exempt layer; a missing or misplaced `csc.rsp` (e.g. a single
+  one at `Assets/`, which reaches no asmdef assembly) is Major — it makes every `?` in that assembly
+  unchecked. `= null!` on a `[SerializeField]`/`[Inject]` field is correct and is never a finding.
+- A project-scoped service that owns a **cross-scene** async operation cancels on its own lifetime
+  `CancellationTokenSource` and takes no `CancellationToken` from the caller — `SceneTransitionService`
+  (`GoTo`, `LoadPendingTarget`, `ActivatePendingTarget`) is the reference case. A caller token there
+  would expire mid-transition or add nothing over the service's own. This is intentional, not a
+  missing parameter, and is never a finding. A missing token on a chain whose work *does* belong to
+  the caller's lifetime still is.
+- A `ViewModel` `MonoBehaviour` bound through `autoInjectGameObjects` on its scene's `LifetimeScope`
+  is wired as intended. Do not propose `RegisterComponentInHierarchy<T>()`, making the type `public`,
+  or adding a `ViewModel` reference to a `DI` asmdef; the container injects into scene components, it
+  does not construct them.
+- **No comments in patches.** A `PATCH` block never introduces a code comment, an XML doc comment
+  or a TODO, and "add a comment explaining X" is never a finding. Put the explanation in the `WHY`
+  line instead. If a patch only makes sense with a comment, the patch is not clear enough.
 - If you find nothing in your lens, say so. An empty report is a valid and useful result.
 - The reviewed code was written by hand by the developer. Be direct and technical, not deferential,
   and do not rewrite working code for taste.

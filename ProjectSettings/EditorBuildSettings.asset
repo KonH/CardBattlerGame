@@ -8,6 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EntryPoint.unity
     guid: 7b8388b8815ad9b46838d9ffd335e841
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: 4ebe123c8875abc43a7114816a62da98
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 3ec13cc209657fd44a7667e02213e587, type: 2}
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

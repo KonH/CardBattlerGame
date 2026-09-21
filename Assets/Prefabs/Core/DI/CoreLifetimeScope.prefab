@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3693413638733298055}
-  - component: {fileID: 4430455071893017360}
+  - component: {fileID: -2040526695990388487}
   m_Layer: 0
   m_Name: CoreLifetimeScope
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4430455071893017360
+--- !u!114 &-2040526695990388487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,9 +41,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1904394036902999392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b2c62ac3bcd44fb9e09835581422057, type: 3}
+  m_Script: {fileID: 11500000, guid: 68d3bb3f21bc4dfe915744afe6e438af, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: VContainer::VContainer.Unity.LifetimeScope
+  m_EditorClassIdentifier: Game.Core.DI::Core.DI.CoreLifetimeScope
   parentReference:
     TypeName: 
   autoRun: 1

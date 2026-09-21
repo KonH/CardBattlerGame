@@ -1,3 +1,19 @@
 {
-  "name": "Game.EntryPoint.Service"
+    "name": "Game.EntryPoint.Service",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:e84a0a9bf3ae48bf8b91fce6de04fd61",
+        "GUID:9b8bd7572beac1f47b05cb0afd7af026"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
